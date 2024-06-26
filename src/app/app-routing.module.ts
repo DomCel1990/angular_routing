@@ -6,6 +6,11 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
+    path: 'courses',
+    loadChildren: () => import('./courses/courses.module')
+      .then(module => module.CoursesModule)
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
