@@ -7,6 +7,7 @@ import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import { LessonDetailComponent } from './lesson/lesson-detail.component';
 import { LessonResolver } from './services/lessons.resolver';
 import { LessonDetailsResolver } from './services/lesson-details.resolver';
+import { AuthGuard } from '../services/auth.guard';
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
     {
       path: ':courseUrl',
       component: CourseComponent,
+      canActivate: [AuthGuard],
+      canActivateChild: [AuthGuard],
       children: [
         {
           path: '',
@@ -47,7 +50,8 @@ const routes: Routes = [
   providers: [
     CoursesResolver,
     LessonResolver,
-    LessonDetailsResolver
+    LessonDetailsResolver,
+    AuthGuard
   ]
 })
 export class CoursesRoutingModule {

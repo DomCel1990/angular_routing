@@ -58,6 +58,7 @@ import { CoursesResolver } from './services/courses.resolver';
   ],
   providers: [
     CoursesService
+    
   ]
 })
 export class CoursesModule { }
