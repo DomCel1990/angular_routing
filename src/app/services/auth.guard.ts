@@ -24,6 +24,8 @@ export class AuthGuard implements CanActivate, CanActivateChild{
     }
 
     private checkIsAutenticate() {
+        // verifica se autenticato se lo è restituisce tru altrimenti 
+        // ritorni alla pagina di login
      return  this.auth.isLoggedIn$
         .pipe(
          map(loggIn => loggIn ? true : this.router.parseUrl('/login'))
