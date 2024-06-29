@@ -6,7 +6,6 @@ import { Observable, of } from "rxjs";
 export class CustomPreloadingStrategy implements PreloadingStrategy {
     
     preload(route: Route, load: () => Observable<any>): Observable<any> {
-        console.log('ciao');
     
         if(route.data['preload']) {
             // se il preloading è attivo il modoulo verra precaricato
