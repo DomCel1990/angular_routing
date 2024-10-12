@@ -24,15 +24,13 @@ export class CourseComponent implements OnInit {
 
         this.course = this.route.snapshot.data['course'];
 
-        this.couponCode = this.route.snapshot.queryParamMap.get('couponCode')
+        this.couponCode = this.route.snapshot.queryParamMap.get('couponCode');
 
     }
 
     confirmExit(): boolean {
       return confirm ('Are you sure you want to exit' + this.course.description + '?');
     }
-
-
 }
 
 
